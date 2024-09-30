@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 var direction = Vector2.ZERO
-var animation_status = "idle"
+var animation_status = ""
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
