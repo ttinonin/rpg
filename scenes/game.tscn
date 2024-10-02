@@ -1,15 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfrb081xwhx7q"]
+[gd_scene load_steps=5 format=3 uid="uid://bfrb081xwhx7q"]
 
 [ext_resource type="PackedScene" uid="uid://oq8qlg7g7l7i" path="res://scenes/player.tscn" id="1_cekjj"]
 [ext_resource type="PackedScene" uid="uid://cuottkh1srpur" path="res://scenes/world.tscn" id="1_ngt3g"]
+[ext_resource type="PackedScene" uid="uid://c2evp32swpuey" path="res://scenes/hud.tscn" id="2_jiqfw"]
+[ext_resource type="PackedScene" uid="uid://cmkp5wbxy3xe8" path="res://scenes/slime.tscn" id="4_jrrpf"]
 
 [node name="Game" type="Node2D"]
 
 [node name="world" parent="." instance=ExtResource("1_ngt3g")]
 
-[node name="player" parent="." instance=ExtResource("1_cekjj")]
+[node name="CanvasLayer" type="CanvasLayer" parent="world"]
+
+[node name="HUD" parent="world/CanvasLayer" instance=ExtResource("2_jiqfw")]
+
+[node name="player" parent="world" instance=ExtResource("1_cekjj")]
 position = Vector2(42, 46)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="world/player"]
 position = Vector2(-1, 1)
 zoom = Vector2(1.3, 1.3)
+
+[node name="slime" parent="world" instance=ExtResource("4_jrrpf")]
+position = Vector2(-348, -173)

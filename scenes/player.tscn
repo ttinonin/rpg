@@ -127,6 +127,11 @@ animations = [{
 "name": &"horizontal_idle",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"sword_idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bdvj2")
@@ -158,11 +163,12 @@ radius = 22.0
 height = 62.0
 
 [node name="player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_aq23s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7fk8w")
-animation = &"_idle"
+animation = &"sword_idle"
 autoplay = "_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
