@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvoqte3s5viyh"]
+
+[sub_resource type="GDScript" id="GDScript_6wdgp"]
+script/source = "extends Item
+
+class_name Weapon
+
+var damage: float
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	sprite_2d.texture = texture
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="item" type="Node2D"]
+script = SubResource("GDScript_6wdgp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

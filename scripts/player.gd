@@ -4,11 +4,12 @@ const SPEED = 300.0
 var health = 100.0
 var direction = Vector2.ZERO
 var animation_status = ""
+var current_item = null
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-func attack():
-	print("attack")
+func setItem(item):
+	current_item = item
 
 func move():
 	direction = Vector2.ZERO
@@ -43,4 +44,7 @@ func animate():
 func _physics_process(delta: float) -> void:
 	move()
 	animate()
-	attack()
+
+
+func _on_dagger_weapon_collected(weapon) -> void:
+	setItem(weapon)
